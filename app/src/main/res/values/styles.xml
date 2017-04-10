@@ -8,4 +8,13 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!--GENERIC DIALOG-->
+    <style name="GenericDialog"/>
+    <style name="GenericDialog.ControlBtn">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:background">?selectableItemBackground</item>
+        <item name="android:minHeight">@dimen/button_height_short</item>
+        <item name="android:minWidth">@dimen/button_height_tall</item>
+    </style>
+
 </resources>

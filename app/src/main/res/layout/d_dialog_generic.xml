@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/dialog_generic_root"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="@dimen/space_double"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/space_triple"
+    android:background="@color/grey_50">
+
+
+
+    <id.ahmadnbl.skeletonproject.ui.custom.MontserratTextView
+        android:id="@+id/dialog_generic_title_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_double"
+        android:visibility="gone"
+        android:textColor="@color/grey_800"
+        android:textSize="@dimen/font_large"
+        tools:visibility="visible"
+        tools:text="TEXT SAMPLE GOES HERE"/>
+
+    <id.ahmadnbl.skeletonproject.ui.custom.MontserratTextView
+        android:id="@+id/dialog_generic_message_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/grey_500"
+        android:textSize="@dimen/font_normal"
+        tools:text="TEXT SAMPLE GOES HERE"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_double"
+        android:orientation="horizontal"
+        android:gravity="right">
+
+        <id.ahmadnbl.skeletonproject.ui.custom.MontserratButton
+            android:id="@+id/dialog_generic_negative_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/space_double"
+            android:layout_marginEnd="@dimen/space_double"
+            android:visibility="gone"
+            android:text="@string/generic_dialog.negative_button"
+            style="@style/GenericDialog.ControlBtn"
+            tools:visibility="visible"/>
+
+        <id.ahmadnbl.skeletonproject.ui.custom.MontserratButton
+            android:id="@+id/dialog_generic_positive_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:text="@string/generic_dialog.positive_button"
+            style="@style/GenericDialog.ControlBtn"
+            tools:visibility="visible"/>
+
+    </LinearLayout>
+
+</LinearLayout>

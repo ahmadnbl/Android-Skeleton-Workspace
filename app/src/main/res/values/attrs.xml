@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Define the values for the attribute -->
+    <attr name="typeface" format="enum">
+        <enum name="montserrat" value="0"/>
+        <enum name="montserratBold" value="1"/>
+    </attr>
+
+    <!-- Tell Android that the class "CustomButton" can be styled,
+         and which attributes it supports -->
+    <declare-styleable name="MontserratTextView">
+        <attr name="typeface"/>
+    </declare-styleable>
+    <declare-styleable name="MontserratEditText">
+        <attr name="typeface"/>
+    </declare-styleable>
+    <declare-styleable name="MontserratButton">
+        <attr name="typeface"/>
+    </declare-styleable>
+
+
+
+    <declare-styleable name="MontserratTextViewBehaviour">
+        <attr name="finalYPosition" format="dimension"/>
+        <attr name="startXPosition" format="dimension"/>
+        <attr name="startToolbarPosition" format="dimension"/>
+        <attr name="startHeight" format="dimension"/>
+        <attr name="finalHeight" format="dimension"/>
+    </declare-styleable>
+</resources>

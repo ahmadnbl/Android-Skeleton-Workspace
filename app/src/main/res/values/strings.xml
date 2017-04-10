@@ -1,3 +1,146 @@
 <resources>
     <string name="app_name">SkeletonProject</string>
+
+    <!--TERMS-->
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="yes_id">Ya</string>
+    <string name="no_id">Tidak</string>
+    <string name="proceed">Lanjutkan</string>
+    <string name="retry">Retry</string>
+    <string name="close">Close</string>
+    <string name="cancel">Cancel</string>
+    <string name="add">Add</string>
+    <string name="update">Update</string>
+    <string name="connect">Connect</string>
+    <string name="email">Email</string>
+    <string name="favourite">Favourite</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="full_name">Nama Lengkap</string>
+    <string name="loading">Loading</string>
+    <string name="start_now">Mulai Sekarang</string>
+    <string name="password">Password</string>
+    <string name="photo">Photo</string>
+    <string name="phone_number">Nomor Handphone</string>
+    <string name="recent_searches"><![CDATA[<u>Recent Searches</u>]]></string>
+    <string name="register">Register</string>
+    <string name="register_now">Daftar sekarang</string>
+    <string name="or_login_with">atau login dengan</string>
+    <string name="retype_password">Re-type Password</string>
+    <string name="search">Search</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_terms"><![CDATA[By continuing REGISTRATION<br/>you agree to our <u>Terms And Conditions</u>]]></string>
+    <string name="to">To</string>
+    <string name="resend_activation_code"><![CDATA[Don\'t get the code? <b>Resend activation code</b>]]></string>
+    <string name="no_data">No Data Available</string>
+
+    <string name="connection.problem">Connection Problem</string>
+    <string name="connection.problem.swipe">Connection Problem.\nSwipe to Refresh.</string>
+    <string name="internet.problem">No Internet Access</string>
+    <string name="internet.problem.errorMsg">Please check your internet connection</string>
+
+    <string name="confirm">Confirm</string>
+    <string name="process">Process</string>
+    <string name="config">Atur</string>
+    <string name="name">Nama</string>
+    <string name="address">Alamat</string>
+    <string name="or">Or</string>
+    <string name="errorCode">Status</string>
+    <string name="date_birth">Date of Birth</string>
+    <string name="gender">Gender</string>
+    <string name="give_us_rating_and_comment">Give us rating and coment</string>
+    <string name="refresh">Refresh</string>
+    <string name="save">Simpan</string>
+    <string name="skip">Lewati</string>
+    <string name="profile">Profile</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="change_password">Change Password</string>
+    <string name="logout">Logout</string>
+    <string name="scan_qr_barcode">Scan Barcode/QRCode</string>
+    <string name="current_password">Current Password</string>
+    <string name="new_password">New Password</string>
+    <string name="retype_new_password">Retype New Password</string>
+    <string name="tandc">Terms and Conditions</string>
+    <string name="edit">Edit</string>
+    <string name="submit">Submit</string>
+    <string name="select">Select</string>
+    <string name="next">Next</string>
+    <string name="done">Done</string>
+    <string name="amount">Jumlah</string>
+    <string name="idr_currency" translatable="false">Rp</string>
+    <string name="success">Berhasil</string>
+    <string name="contact_us_email">Send Us Email</string>
+    <string name="contact_us_call">Call Us</string>
+
+
+    <string name="error.on_error_network">Error occurred. Please check your internet connection and try again later.</string>
+    <string name="error.password_empty">Passsword can\'t be empty.</string>
+    <string name="error.occurred">Error occurred, please try again later.</string>
+    <string name="error.input.retype.password">Your password do not match</string>
+    <string name="error.input.fullname">Please insert your fullname</string>
+    <string name="error.input.email">Please insert your valid email</string>
+    <string name="error.input.empty">Can\'t empty</string>
+    <string name="error.input.phone">Please insert your valid phone number</string>
+    <string name="error.network.timeout.try.again">Connection timed out. Please try again later.</string>
+    <string name="error.file.notfound">File not found. Please pick another file.</string>
+    <string name="error.server.occured">Oops! Ada kesalah pada sever. Silahkan coba lagi nanti.</string>
+
+    <string name="session_expired_message">Sesi anda telah habis. Silahkan melakukan login kembali.</string>
+
+    <!--GENERIC_DIALOG-->
+    <string name="generic_dialog.positive_button">OK</string>
+    <string name="generic_dialog.negative_button">Cancel</string>
+
+    <!--JNE NEARBY-->
+    <string name="problem_while_connect_to_google_services">Terjadi masalah dalam mengakses layanan Google.</string>
+    <string name="need_enable_gps">Untuk menggunakan layanan ini, setelan GPS anda harus dalam keadaan aktif.</string>
+    <string name="need_access_location_permission">Untuk menggunakan layanan ini, aplikasi perlu mengakses lokasi anda.</string>
+    <string name="access_location_not_permitted">Tidak dapat akses lokasi anda. Cek permission settings untuk akses lokasi anda.</string>
+    <string name="facilities">Layanan</string>
+    <string name="jlc">JLC</string>
+    <string name="jne_loyalty_card">JNE Loyalty Card</string>
+    <string name="pick_up_point">Pick-up Point</string>
+    <string name="job">JOB</string>
+    <string name="pipo">PIPO</string>
+    <string name="finding_your_location">Mencari posisi anda&#8230;</string>
+
+    <!--MY PROFILE-->
+    <string name="my_profile">My Profile</string>
+    <string name="postal_code">Postal Code</string>
+    <string name="manage_address">Manage your addresses      ></string>
+    <string name="take_a_photo">Take a photo</string>
+    <string name="use_existing_photo">Use existing photo</string>
+    <string name="update_photo_failed">Failed to update photo.</string>
+    <string name="name_must_match_with_identity">Nama harus sesuai dengan KTP</string>
+    <string name="identity_must_be_update">Anda perlu memperbarui identitas anda</string>
+    <string name="pick_your_bank_account">Pilih akun bank anda</string>
+    <string name="pick_your_bank_account_to_use">Silahkan pilih akun bank yang ingin anda gunakan di myJNE.</string>
+
+    <!--ADDITIONAL ADDRESS-->
+    <string name="address_setting">Pengaturan Alamat</string>
+    <string name="change">Ubah</string>
+    <string name="delete">Hapus</string>
+    <string name="add_new_address">Tambah Alamat Baru</string>
+    <string name="n_address">Alamat #%1s</string>
+    <string name="address_name">Nama Alamat</string>
+    <string name="address_name_hint">Nama Alamat (Alamat rumah, kantor, dll)</string>
+    <string name="district">Kecamatan</string>
+    <string name="please_input_district">Harap masukkan kecamatan</string>
+    <string name="please_input_city">Harap masukkan kota</string>
+    <string name="address_list_maximum_reahed">Daftar alamat sudah mencapai jumlah maksimum. Harap hapus beberapa alamat.</string>
+    <string name="deleting_address">Menghapus alamat yang dipilih&#8230;</string>
+    <string name="success_save_address">Berhasil menyimpan alamat anda</string>
+    <string name="change_address">Ubah Alamat</string>
+    <string name="empty_address">Alamat masih kosong</string>
+
+   <string name="access_storage_not_permitted">Tidak dapat akses penyimpanan eksternal anda. Cek permission settings untuk akses penyimpanan eksternal anda.</string>
+    <string name="access_camera_or_storage_not_permitted">Tidak dapat akses kamera atau penyimpanan eksternal anda. Cek permission settings untuk akses kamera dan penyimpanan eksternal anda.</string>
+    <string name="access_camera_not_permitted">Tidak dapat akses kamera anda. Cek permission settings untuk akses kamera anda.</string>
+
+
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank mActivity</string>
 </resources>

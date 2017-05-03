@@ -4,12 +4,9 @@ import android.os.Bundle;
 import android.view.View;
 
 /**
- * Created by billy on 8/25/16.
- *
- * General base for every fragment that implemented inside Pager
+ * Created by billy on 6/15/16.
  *
  */
-
 public abstract class BaseFragmentPager extends BaseFragment {
     private boolean _mOnProgressLoaded        = false;
     private boolean _mOnProgressVisibleToUser = false;

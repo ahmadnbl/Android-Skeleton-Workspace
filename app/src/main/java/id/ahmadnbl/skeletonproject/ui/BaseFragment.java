@@ -11,13 +11,6 @@ import android.view.ViewGroup;
 
 import butterknife.ButterKnife;
 
-/**
- * Created by billy on 8/25/16.
- *
- * General base for every fragment
- *
- */
-
 public abstract class BaseFragment extends Fragment {
 
     private boolean mAttachCallbackCalled = false;

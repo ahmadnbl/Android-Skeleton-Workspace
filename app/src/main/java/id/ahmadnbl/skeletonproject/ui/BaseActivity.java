@@ -11,20 +11,24 @@ import android.widget.TextView;
 
 import butterknife.ButterKnife;
 import id.ahmadnbl.skeletonproject.R;
+import id.ahmadnbl.skeletonproject.SkeletonApplication;
 
 /**
  * Created by billy on 8/25/16.
- *
  * General base for every activities
- *
  */
-
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends AppCompatActivity{
 
     private boolean mIsUseCustomToolbar = false;
     private Toolbar mToolbar;
 
     protected abstract int getLayout();
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        SkeletonApplication.getInstance().increaseSessionDepth();
+    }
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +37,12 @@ public abstract class BaseActivity extends AppCompatActivity {
             setContentView(getLayout());
         }
         ButterKnife.bind(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        SkeletonApplication.getInstance().decreaseSessionDepth();
     }
 
     @Override

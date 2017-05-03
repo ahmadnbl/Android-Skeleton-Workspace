@@ -1,70 +1,62 @@
 package id.ahmadnbl.skeletonproject.rxcomponent;
 
 
-import org.reactivestreams.Subscription;
-
 import id.ahmadnbl.skeletonproject.data.model.response.GenericResp;
 import id.ahmadnbl.skeletonproject.interfaces.OnNetworkRequestResponse;
-import io.reactivex.Observer;
-import io.reactivex.disposables.Disposable;
+import io.reactivex.annotations.NonNull;
+import io.reactivex.functions.Consumer;
 
 
 /**
  * Created by billy on 8/12/16.
  *
  */
-public class RxGenericRequestSubscriber<T extends GenericResp> implements Observer<T> {
+public class RxGenericRequestSubscriber<T extends GenericResp> {
     private static final String TAG = RxGenericRequestSubscriber.class.getSimpleName();
 
     private OnNetworkRequestResponse mRequestCallback;
-    private Subscription mRequestSubscriber;
     private int mRequestTag;
+    private Consumer<T> mResponseHandler;
+    private Consumer<Throwable> mExceptionHandler;
 
 
-    public RxGenericRequestSubscriber(OnNetworkRequestResponse mRequestCallback, Subscription requestSubscriber, int mRequestTag) {
-        this.mRequestCallback = mRequestCallback;
-        this.mRequestSubscriber = requestSubscriber;
-        this.mRequestTag = mRequestTag;
+    public RxGenericRequestSubscriber(OnNetworkRequestResponse requestCallback, int requestTag) {
+        this.mRequestCallback = requestCallback;
+        this.mRequestTag = requestTag;
+
+        // Handling response from server
+        this.mResponseHandler = new Consumer<T>() {
+            @Override
+            public void accept(@NonNull T t) throws Exception {
+                if(isResponseSuccess(t.getStatus())){
+                    mRequestCallback.onResponseSuccess(mRequestTag, t);
+                }else{
+                    mRequestCallback.onResponseFailure(mRequestTag, t);
+                }
+            }
+        };
+
+        // Handling exception occured
+        this.mExceptionHandler = new Consumer<Throwable>() {
+            @Override
+            public void accept(@NonNull Throwable t) throws Exception {
+                mRequestCallback.onError(mRequestTag, t);
+            }
+        };
     }
 
-    private boolean isRequestSuccess(int respStatus){
-        if(isResponseSuccess(respStatus)){
-            return true;
-        }else{
-            return false;
-        }
+    public Consumer getResponseConsumer(){
+        return mResponseHandler;
     }
 
-    protected boolean isResponseSuccess(int respStatus){
+    public Consumer getExceptionConsumer(){
+        return mExceptionHandler;
+    }
+
+    private boolean isResponseSuccess(int respStatus){
         // TODO: 8/25/16 CHECK THIS AGAIN
         return respStatus == 0 ||
                 respStatus == 11014 ||
                 respStatus == 1;
-    }
-
-    @Override
-    public void onComplete() {
-        if(mRequestSubscriber!=null) {
-            mRequestSubscriber.cancel();
-        }
-    }
-
-    @Override
-    public void onError(Throwable e) {
-        mRequestCallback.onError(mRequestTag, e);
-    }
-
-    @Override
-    public void onNext(T t) { // change this if you want
-        if(isRequestSuccess(t.getStatus())){
-            mRequestCallback.onResponseSuccess(mRequestTag, t);
-        }else{
-            mRequestCallback.onResponseFailure(mRequestTag, t);
-        }
-    }
-
-    @Override
-    public void onSubscribe(Disposable d) {
-
     }
 }

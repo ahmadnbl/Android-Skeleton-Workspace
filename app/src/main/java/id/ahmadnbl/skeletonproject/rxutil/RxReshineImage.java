@@ -1,4 +1,4 @@
-package id.ahmadnbl.skeletonproject.rxhelper;
+package id.ahmadnbl.skeletonproject.rxutil;
 
 
 import id.ahmadnbl.skeletonproject.util.GraphicsUtil;

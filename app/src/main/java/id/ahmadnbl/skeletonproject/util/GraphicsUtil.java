@@ -1,15 +1,18 @@
 package id.ahmadnbl.skeletonproject.util;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
+import android.graphics.Canvas;
 import android.graphics.EmbossMaskFilter;
 import android.graphics.Matrix;
+import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
+import android.os.Build;
+import android.support.v4.graphics.drawable.DrawableCompat;
+import android.support.v7.widget.AppCompatDrawableManager;
 import android.view.View;
 import android.widget.TextView;
-
-import com.google.zxing.common.BitMatrix;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -33,22 +36,25 @@ public class GraphicsUtil {
     }
 
     /**
-     * Writes the given Matrix on a new Bitmap object.
-     *
-     * @param matrix the matrix to write.
-     * @return the new {@link Bitmap}-object.
+     * Getting bitmap object from vector drawable
+     * @param context current context
+     * @param drawableId vector resource id
+     * @return bitmap object
      */
-    public static Bitmap toBitmap(BitMatrix matrix) {
-        if(matrix==null) return null;
-        int height = matrix.getHeight();
-        int width = matrix.getWidth();
-        Bitmap bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565);
-        for (int x = 0; x < width; x++) {
-            for (int y = 0; y < height; y++) {
-                bmp.setPixel(x, y, matrix.get(x, y) ? Color.BLACK : Color.WHITE);
-            }
+    public static Bitmap getBitmapFromVectorDrawable(Context context, int drawableId) {
+        //noinspection RestrictedApi
+        Drawable drawable = AppCompatDrawableManager.get().getDrawable(context, drawableId);
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
+            drawable = (DrawableCompat.wrap(drawable)).mutate();
         }
-        return bmp;
+
+        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
+                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
+        Canvas canvas = new Canvas(bitmap);
+        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
+        drawable.draw(canvas);
+
+        return bitmap;
     }
 
     /**

@@ -21,7 +21,7 @@ public class RequestDemo {
     private RxGenericRequestSubscriber subscriber;
 
     public RequestDemo(OnNetworkRequestResponse mRequestCallback) {
-        this.subscriber = new RxGenericRequestSubscriber<GenericResp>(mRequestCallback, TAG);
+        this.subscriber = new RxGenericRequestSubscriber<>(mRequestCallback, TAG);
     }
 
     public void doRequest(String request){ // change this if you want: request

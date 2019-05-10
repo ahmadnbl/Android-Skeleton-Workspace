@@ -1,12 +1,10 @@
 package id.ahmadnbl.skeletonproject.ui.custom;
 
-import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.os.Build;
-import android.support.v7.widget.AppCompatTextView;
+
+import androidx.appcompat.widget.AppCompatTextView;
 import android.util.AttributeSet;
-import android.widget.TextView;
 
 import id.ahmadnbl.skeletonproject.R;
 import id.ahmadnbl.skeletonproject.data.constant.Font;

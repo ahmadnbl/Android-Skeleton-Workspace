@@ -9,8 +9,8 @@ import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 import android.os.Build;
-import android.support.v4.graphics.drawable.DrawableCompat;
-import android.support.v7.widget.AppCompatDrawableManager;
+import androidx.core.graphics.drawable.DrawableCompat;
+import androidx.appcompat.widget.AppCompatDrawableManager;
 import android.view.View;
 import android.widget.TextView;
 

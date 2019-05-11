@@ -15,11 +15,11 @@ public class AppPrefHelper {
     private SharedPreferences preferences;
 
     private void initPref() {
-        preferences = SkeletonApplication.getInstance().getAppSharedPreferences();
+        preferences = SkeletonApplication.Companion.getInstance().getAppSharedPreferences();
     }
 
     public AppPrefHelper() {
-        preferences = SkeletonApplication.getInstance().getAppSharedPreferences();
+        preferences = SkeletonApplication.Companion.getInstance().getAppSharedPreferences();
     }
 
     private SharedPreferences getPreferences() {

@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="@dimen/space_double"
+        android:padding="@dimen/space_qtriple"
         tools:ignore="RtlHardcoded">
 
         <TextView
@@ -33,37 +33,31 @@
             android:id="@+id/dialog_generic_message_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/space_triple"
             android:textColor="@color/black"
             android:textSize="@dimen/font_normal"
             tools:text="TEXT SAMPLE GOES HERE" />
 
-        <LinearLayout
+        <Button
+            android:id="@+id/dialog_generic_positive_btn"
+            style="@style/GenericDialog.ControlBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/space_double"
-            android:gravity="end"
-            android:orientation="horizontal">
+            android:gravity="right"
+            android:text="@string/generic_dialog_positive_button"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
-            <Button
-                android:id="@+id/dialog_generic_negative_btn"
-                style="@style/GenericDialog.ControlBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="@dimen/space_double"
-                android:text="@string/generic_dialog_negative_button"
-                android:visibility="gone"
-                tools:visibility="visible" />
+        <Button
+            android:id="@+id/dialog_generic_negative_btn"
+            style="@style/GenericDialog.ControlBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="@string/generic_dialog_negative_button"
+            android:visibility="gone"
+            tools:visibility="visible" />
 
-            <Button
-                android:id="@+id/dialog_generic_positive_btn"
-                style="@style/GenericDialog.ControlBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/generic_dialog_positive_button"
-                android:visibility="gone"
-                tools:visibility="visible" />
-
-        </LinearLayout>
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>

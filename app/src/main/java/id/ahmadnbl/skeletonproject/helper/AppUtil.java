@@ -1,4 +1,4 @@
-package id.ahmadnbl.skeletonproject.util;
+package id.ahmadnbl.skeletonproject.helper;
 
 import android.app.Activity;
 import android.content.Context;
@@ -22,7 +22,7 @@ public class AppUtil {
      */
     public static boolean isConnected() {
         ConnectivityManager
-                cm = (ConnectivityManager) SkeletonApplication.getInstance().getApplicationContext()
+                cm = (ConnectivityManager) SkeletonApplication.Companion.getInstance().getApplicationContext()
                                                     .getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         return activeNetwork != null && activeNetwork.isConnectedOrConnecting();

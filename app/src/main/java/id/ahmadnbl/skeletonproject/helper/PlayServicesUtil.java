@@ -1,4 +1,4 @@
-package id.ahmadnbl.skeletonproject.util;
+package id.ahmadnbl.skeletonproject.helper;
 
 import android.app.Activity;
 import android.os.Handler;

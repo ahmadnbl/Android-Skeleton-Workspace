@@ -77,6 +77,8 @@
     <string name="session_expired_message">Sesi anda telah habis. Silahkan melakukan login kembali.</string>
 
     <!--GENERIC_DIALOG-->
+    <string name="generic_dialog_positive_button">OK</string>
+    <string name="generic_dialog_negative_button">Cancel</string>
 
     <string name="access_storage_not_permitted">Tidak dapat akses penyimpanan eksternal anda. Cek permission settings untuk akses penyimpanan eksternal anda.</string>
     <string name="access_camera_or_storage_not_permitted">Tidak dapat akses kamera atau penyimpanan eksternal anda. Cek permission settings untuk akses kamera dan penyimpanan eksternal anda.</string>

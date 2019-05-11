@@ -25,7 +25,7 @@ public class RequestDemo {
     }
 
     public void doRequest(String request){ // change this if you want: request
-        Api api = SkeletonApplication.getInstance().getApi();
+        Api api = SkeletonApplication.Companion.getInstance().getApi();
         Observable<GenericResp> mCall = api.demo(request); // change this: method to be called, response
         mDisposable = mCall.subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

@@ -1,4 +1,4 @@
-package id.ahmadnbl.skeletonproject.util;
+package id.ahmadnbl.skeletonproject.helper;
 
 
 import java.io.UnsupportedEncodingException;

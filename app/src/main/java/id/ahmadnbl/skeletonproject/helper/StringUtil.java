@@ -1,4 +1,4 @@
-package id.ahmadnbl.skeletonproject.util;
+package id.ahmadnbl.skeletonproject.helper;
 
 /**
  * Created by billy on 24/11/16.

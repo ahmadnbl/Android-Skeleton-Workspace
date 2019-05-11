@@ -1,28 +1,26 @@
-package id.ahmadnbl.skeletonproject.util;
+package id.ahmadnbl.skeletonproject.helper.rx;
 
-import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
 import android.graphics.EmbossMaskFilter;
 import android.graphics.Matrix;
-import android.graphics.drawable.Drawable;
-import android.media.ExifInterface;
-import android.os.Build;
-import androidx.core.graphics.drawable.DrawableCompat;
-import androidx.appcompat.widget.AppCompatDrawableManager;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.exifinterface.media.ExifInterface;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
+
+import id.ahmadnbl.skeletonproject.helper.FileHelper;
 
 /**
  * Created by billy on 28/11/16.
  *
  */
 
-public class GraphicsUtil {
+public class GraphicsHelper {
 
     public static void setTextDebossEffect(TextView view){
         EmbossMaskFilter filter = new EmbossMaskFilter(
@@ -35,27 +33,6 @@ public class GraphicsUtil {
         view.getPaint().setMaskFilter(filter);
     }
 
-    /**
-     * Getting bitmap object from vector drawable
-     * @param context current context
-     * @param drawableId vector resource id
-     * @return bitmap object
-     */
-    public static Bitmap getBitmapFromVectorDrawable(Context context, int drawableId) {
-        //noinspection RestrictedApi
-        Drawable drawable = AppCompatDrawableManager.get().getDrawable(context, drawableId);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.LOLLIPOP) {
-            drawable = (DrawableCompat.wrap(drawable)).mutate();
-        }
-
-        Bitmap bitmap = Bitmap.createBitmap(drawable.getIntrinsicWidth(),
-                drawable.getIntrinsicHeight(), Bitmap.Config.ARGB_8888);
-        Canvas canvas = new Canvas(bitmap);
-        drawable.setBounds(0, 0, canvas.getWidth(), canvas.getHeight());
-        drawable.draw(canvas);
-
-        return bitmap;
-    }
 
     /**
      * Do image compressing up to 320px and compressing up to 70 percent quality
@@ -81,12 +58,42 @@ public class GraphicsUtil {
 
         // Write to file
         try {
-            FileUtil.writeByteToFile(bytes.toByteArray(), filePath);
+            FileHelper.writeByteToFile(bytes.toByteArray(), filePath);
             thumbnail.recycle();
             bytes.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Do image compressing up to 320px and compressing up to 70 percent quality
+     * @param bitmap the target bitmap need to be processed
+     * @return resized {@link Bitmap}
+     */
+    public static Bitmap resizeBitmap(Bitmap bitmap) {
+
+        // getting bitmap in byte array
+        int size = bitmap.getRowBytes() * bitmap.getHeight();
+        ByteBuffer byteBuffer = ByteBuffer.allocate(size);
+        bitmap.copyPixelsToBuffer(byteBuffer);
+        byte[] byteArray = byteBuffer.array();
+
+        final int REQUIRED_SIZE = 320;
+        // Setting option to resize image
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inJustDecodeBounds = true;
+        BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
+
+        int scale = 1;
+        while (options.outWidth / scale / 2 >= REQUIRED_SIZE
+                && options.outHeight / scale / 2 >= REQUIRED_SIZE)
+            scale *= 2;
+        options.inSampleSize = scale;
+        options.inJustDecodeBounds = false;
+
+        // Load file with option parameter, then compress it
+        return BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length, options);
     }
 
     /**
@@ -120,7 +127,7 @@ public class GraphicsUtil {
             if(isChanged){
                 ByteArrayOutputStream bytes = new ByteArrayOutputStream();
                 bitmap.compress(Bitmap.CompressFormat.JPEG, 100, bytes);
-                FileUtil.writeByteToFile(bytes.toByteArray(), filepath);
+                FileHelper.writeByteToFile(bytes.toByteArray(), filepath);
             }
         } catch (IOException e) {
             e.printStackTrace();

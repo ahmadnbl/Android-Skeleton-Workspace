@@ -15,7 +15,7 @@ public class UserPrefHelper {
     private SharedPreferences preferences;
 
     private void initPref() {
-        preferences = SkeletonApplication.getInstance().getUserSharedPreferences();
+        preferences = SkeletonApplication.Companion.getInstance().getUserSharedPreferences();
     }
 
     private SharedPreferences getPreferences() {

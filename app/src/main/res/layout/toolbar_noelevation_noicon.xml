@@ -13,7 +13,7 @@
         app:layout_scrollFlags="scroll|enterAlways"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
 
-        <id.ahmadnbl.skeletonproject.ui.custom.MontserratTextView
+        <id.ahmadnbl.skeletonproject.ui.dialog.MontserratTextView
             android:id="@+id/toolbar_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

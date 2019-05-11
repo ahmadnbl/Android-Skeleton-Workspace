@@ -47,6 +47,14 @@ public abstract class BaseFragmentPager extends BaseFragment {
     }
 
     /**
+     * This method will called when the pager adapter need to get fragment title
+     * @return title in String type
+     */
+    public String getTitle(){
+        return "";
+    }
+
+    /**
      * onInitialPreparation
      * Called when the fragment is visible only for the first time.
      */

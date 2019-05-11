@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">SkeletonProject</string>
 
+    <!--ERROR Message-->
+    <string name="error_occured_try_again_later">Error occurred, please try again later&#8230;</string>
+
     <!--TERMS-->
     <string name="ok">OK</string>
     <string name="yes">Yes</string>
@@ -34,12 +37,6 @@
     <string name="to">To</string>
     <string name="resend_activation_code"><![CDATA[Don\'t get the code? <b>Resend activation code</b>]]></string>
     <string name="no_data">No Data Available</string>
-
-    <string name="connection.problem">Connection Problem</string>
-    <string name="connection.problem.swipe">Connection Problem.\nSwipe to Refresh.</string>
-    <string name="internet.problem">No Internet Access</string>
-    <string name="internet.problem.errorMsg">Please check your internet connection</string>
-
     <string name="confirm">Confirm</string>
     <string name="process">Process</string>
     <string name="config">Atur</string>
@@ -72,25 +69,14 @@
     <string name="success">Berhasil</string>
     <string name="contact_us_email">Send Us Email</string>
     <string name="contact_us_call">Call Us</string>
+    <string name="load_more">Load more</string>
+    <string name="try_again">Try again</string>
 
 
-    <string name="error.on_error_network">Error occurred. Please check your internet connection and try again later.</string>
-    <string name="error.password_empty">Passsword can\'t be empty.</string>
-    <string name="error.occurred">Error occurred, please try again later.</string>
-    <string name="error.input.retype.password">Your password do not match</string>
-    <string name="error.input.fullname">Please insert your fullname</string>
-    <string name="error.input.email">Please insert your valid email</string>
-    <string name="error.input.empty">Can\'t empty</string>
-    <string name="error.input.phone">Please insert your valid phone number</string>
-    <string name="error.network.timeout.try.again">Connection timed out. Please try again later.</string>
-    <string name="error.file.notfound">File not found. Please pick another file.</string>
-    <string name="error.server.occured">Oops! Ada kesalah pada sever. Silahkan coba lagi nanti.</string>
 
     <string name="session_expired_message">Sesi anda telah habis. Silahkan melakukan login kembali.</string>
 
     <!--GENERIC_DIALOG-->
-    <string name="generic_dialog.positive_button">OK</string>
-    <string name="generic_dialog.negative_button">Cancel</string>
 
     <string name="access_storage_not_permitted">Tidak dapat akses penyimpanan eksternal anda. Cek permission settings untuk akses penyimpanan eksternal anda.</string>
     <string name="access_camera_or_storage_not_permitted">Tidak dapat akses kamera atau penyimpanan eksternal anda. Cek permission settings untuk akses kamera dan penyimpanan eksternal anda.</string>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/space_triple">
+
+    <!--LOADING LAYOUT-->
+    <LinearLayout
+        android:id="@+id/pagination_loading_item_loading_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <ProgressBar
+            android:layout_width="32dp"
+            android:layout_height="32dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/loading"
+            android:textColor="@color/grey_600" />
+    </LinearLayout>
+
+    <!--ERROR LAYOUT-->
+    <LinearLayout
+        android:id="@+id/pagination_loading_item_error_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:visibility="gone">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:text="@string/error_occured_try_again_later"
+            android:textColor="@color/red_600" />
+
+        <Button
+            android:id="@+id/pagination_loading_item_error_try_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="?selectableItemBackground"
+            android:text="@string/try_again"
+            android:textColor="@color/yellow_800" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/pagination_loading_item_load_more_action_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?selectableItemBackground"
+        android:text="@string/try_again"
+        android:textAllCaps="false"
+        android:textColor="@color/grey_500" />
+
+</FrameLayout>

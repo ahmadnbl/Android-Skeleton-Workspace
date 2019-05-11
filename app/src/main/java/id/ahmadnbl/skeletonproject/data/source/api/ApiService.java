@@ -1,4 +1,4 @@
-package id.ahmadnbl.skeletonproject.data.api;
+package id.ahmadnbl.skeletonproject.data.source.api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;

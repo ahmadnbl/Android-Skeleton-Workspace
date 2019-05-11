@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/eetoast_card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:contentPadding="@dimen/space_double"
+    app:cardBackgroundColor="@color/red_800"
+    app:cardCornerRadius="24dp"
+    app:cardElevation="12dp"
+    app:cardUseCompatPadding="true"
+    tools:ignore="RtlHardcoded">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/space"
+        android:paddingRight="@dimen/space"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/eetoast_icon_iv"
+            android:layout_width="16dp"
+            android:layout_height="16dp" />
+
+        <TextView
+            android:id="@+id/eetoast_msg_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="32dp"
+            android:gravity="center_vertical"
+            android:layout_marginLeft="@dimen/space_double"
+            android:layout_marginRight="0dp"
+            android:textSize="@dimen/font_medium"
+            android:textColor="@color/white"
+            tools:text="Hello there"/>
+
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>

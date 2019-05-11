@@ -1,8 +1,8 @@
-package id.ahmadnbl.skeletonproject.data.api.method;
+package id.ahmadnbl.skeletonproject.data.source.api.method;
 
 
 import id.ahmadnbl.skeletonproject.SkeletonApplication;
-import id.ahmadnbl.skeletonproject.data.api.Api;
+import id.ahmadnbl.skeletonproject.data.source.api.Api;
 import id.ahmadnbl.skeletonproject.data.model.response.GenericResp;
 import id.ahmadnbl.skeletonproject.interfaces.OnNetworkRequestResponse;
 import id.ahmadnbl.skeletonproject.rxcomponent.RxGenericRequestSubscriber;

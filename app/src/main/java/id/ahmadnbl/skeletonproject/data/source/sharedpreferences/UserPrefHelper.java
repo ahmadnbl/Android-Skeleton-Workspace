@@ -1,8 +1,10 @@
-package id.ahmadnbl.skeletonproject.data.sharedpreferences;
+package id.ahmadnbl.skeletonproject.data.source.sharedpreferences;
 
 import android.content.SharedPreferences;
+import android.util.Base64;
 
 import id.ahmadnbl.skeletonproject.SkeletonApplication;
+import id.ahmadnbl.skeletonproject.helper.Crypto;
 
 /**
  * Created by billy on 8/8/16.
@@ -24,17 +26,24 @@ public class UserPrefHelper {
         UserPrefHelper helper = new UserPrefHelper();
         helper.initPref();
         SharedPreferences.Editor editor = helper.getPreferences().edit();
-        editor.putString(key.toString(), value);
+
+        String b64val = Crypto.Companion.base64(value, Base64.NO_WRAP);
+        String secb64Val = b64val.replace("=", "&#").replace("m", ">");
+        editor.putString(key.toString(), secb64Val);
+
         editor.apply();
     }
 
     public static String getString(UserPrefKey key) {
         UserPrefHelper helper = new UserPrefHelper();
         helper.initPref();
-        return helper.getPreferences().getString(key.toString(), "");
+        String secb64val = helper.getPreferences().getString(key.toString(), "");
+        String b64Val = secb64val.replace(">", "m").replace("&#", "=");
+        return Crypto.Companion.deBase64(b64Val, Base64.NO_WRAP);
     }
 
-    public static void setInt(UserPrefKey key, int value) {
+    public static void setInt(UserPrefKey key, Integer value) {
+        if(value == null) return;
         UserPrefHelper helper = new UserPrefHelper();
         helper.initPref();
         SharedPreferences.Editor editor = helper.getPreferences().edit();
@@ -42,17 +51,17 @@ public class UserPrefHelper {
         editor.apply();
     }
 
-    public static long getLong(UserPrefKey key) {
+    public static float getFloat(UserPrefKey key) {
         UserPrefHelper helper = new UserPrefHelper();
         helper.initPref();
-        return helper.getPreferences().getLong(key.toString(), -1);
+        return helper.getPreferences().getFloat(key.toString(), -1);
     }
 
-    public static void setLong(UserPrefKey key, long value) {
+    public static void setFloat(UserPrefKey key, float value) {
         UserPrefHelper helper = new UserPrefHelper();
         helper.initPref();
         SharedPreferences.Editor editor = helper.getPreferences().edit();
-        editor.putLong(key.toString(), value);
+        editor.putFloat(key.toString(), value);
         editor.apply();
     }
 

@@ -7,7 +7,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import android.util.AttributeSet;
 
 import id.ahmadnbl.skeletonproject.R;
-import id.ahmadnbl.skeletonproject.data.constant.Font;
+import id.ahmadnbl.skeletonproject.data.source.constant.Font;
 
 
 /**

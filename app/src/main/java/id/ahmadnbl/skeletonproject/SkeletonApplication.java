@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
-import id.ahmadnbl.skeletonproject.data.api.Api;
-import id.ahmadnbl.skeletonproject.data.api.ApiService;
+import id.ahmadnbl.skeletonproject.data.source.api.Api;
+import id.ahmadnbl.skeletonproject.data.source.api.ApiService;
 
 /**
  * Created by billy on 19/1/17.

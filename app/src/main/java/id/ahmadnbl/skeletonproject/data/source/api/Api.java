@@ -1,4 +1,4 @@
-package id.ahmadnbl.skeletonproject.data.api;
+package id.ahmadnbl.skeletonproject.data.source.api;
 
 
 import id.ahmadnbl.skeletonproject.data.model.response.GenericResp;
